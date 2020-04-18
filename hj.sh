@@ -161,14 +161,17 @@ case "$num" in
 	;;
 	13)
 	Install_curl
+	;;
 	14)
 	Install_Vim
+	;;
 	15)
 	root_passwd
+	;;
 	16)
 	Install_wget
 	;;
 	*)
-	echo "请输入正确数字 [0-12]"
+	echo "请输入正确数字 [0-16]"
 	;;
 esac
