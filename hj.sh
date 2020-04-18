@@ -114,7 +114,8 @@ echo && echo -e "
  ${Green_font_prefix}14.${Font_color_suffix} Vim安装(debian)  
  ${Green_font_prefix}15.${Font_color_suffix} 更改root密码  
  ${Green_font_prefix}16.${Font_color_suffix} wget安装(debian)  
-————————————" && echo
+  ————————————
+  " && echo
 
 fi
 echo
