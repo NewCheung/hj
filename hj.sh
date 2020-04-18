@@ -118,7 +118,7 @@ echo && echo -e "
 
 fi
 echo
-read -e -p " 请输入数字 [0-12]:" num
+read -e -p " 请输入数字 [0-16]:" num
 case "$num" in
 	0)
 	Update_Shell
