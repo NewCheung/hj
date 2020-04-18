@@ -3,7 +3,7 @@ PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
 
 
-sh_ver="2.0.0"
+sh_ver="2.0.1"
 
 
 
@@ -64,6 +64,22 @@ DD_OD(){
 DD_GD(){
 	wget -N --no-check-certificate https://raw.githubusercontent.com/veip007/dd/master/dd-gd.sh && chmod +x dd-gd.sh  && ./dd-gd.sh
 }
+#13Curl安装(debian)
+Install_curl(){
+	apt-get install curl
+}
+#14Vim安装(debian)
+Install_Vim(){
+	apt-get install vim-gtk
+}
+#15更改root密码
+root_passwd(){
+	passwd root
+}
+#16wget安装(debian)
+Install_wget(){
+	apt-get install wget
+}
 action=$1
 if [[ "${action}" == "monitor" ]]; then
 	crontab_monitor_goflyway
@@ -93,6 +109,11 @@ echo && echo -e "
  ${Green_font_prefix}10.${Font_color_suffix} 云监控
  ${Green_font_prefix}11.${Font_color_suffix} 傻瓜式一键DD包（OD源）
  ${Green_font_prefix}12.${Font_color_suffix} 傻瓜式一键DD包（GD源）
+  ————————————
+ ${Green_font_prefix}13.${Font_color_suffix} Curl安装(debian)  
+ ${Green_font_prefix}14.${Font_color_suffix} Vim安装(debian)  
+ ${Green_font_prefix}15.${Font_color_suffix} 更改root密码  
+ ${Green_font_prefix}16.${Font_color_suffix} wget安装(debian)  
 ————————————" && echo
 
 fi
@@ -137,6 +158,15 @@ case "$num" in
 	;;
 	12)
 	DD_GD
+	;;
+	13)
+	Install_curl
+	14)
+	Install_Vim
+	15)
+	root_passwd
+	16)
+	Install_wget
 	;;
 	*)
 	echo "请输入正确数字 [0-12]"
