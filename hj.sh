@@ -123,7 +123,7 @@ echo && echo -e "
 
 fi
 echo
-read -e -p " 请输入数字 [0-16]:" num
+read -e -p " 请输入数字 [0-17]:" num
 case "$num" in
 	0)
 	Update_Shell
@@ -180,6 +180,6 @@ case "$num" in
 	Install_update
 	;;
 	*)
-	echo "请输入正确数字 [0-16]"
+	echo "请输入正确数字 [0-17]"
 	;;
 esac
