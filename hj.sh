@@ -3,7 +3,7 @@ PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
 
 
-sh_ver="2.0.1"
+sh_ver="2.0.2"
 
 
 
@@ -79,6 +79,9 @@ root_passwd(){
 #16wget安装(debian)
 Install_wget(){
 	apt-get install wget
+#17更新系统源 (debian)
+Install_update(){
+	apt-get update	
 }
 action=$1
 if [[ "${action}" == "monitor" ]]; then
@@ -114,6 +117,7 @@ echo && echo -e "
  ${Green_font_prefix}14.${Font_color_suffix} Vim安装(debian)  
  ${Green_font_prefix}15.${Font_color_suffix} 更改root密码  
  ${Green_font_prefix}16.${Font_color_suffix} wget安装(debian)  
+ ${Green_font_prefix}17.${Font_color_suffix} 更新系统源 (debian)
  ——————————————————
   " && echo
 
@@ -171,6 +175,9 @@ case "$num" in
 	;;
 	16)
 	Install_wget
+	;;
+	17)
+	Install_update
 	;;
 	*)
 	echo "请输入正确数字 [0-16]"
