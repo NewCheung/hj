@@ -79,6 +79,7 @@ root_passwd(){
 #16wget安装(debian)
 Install_wget(){
 	apt-get install wget
+}	
 #17更新系统源 (debian)
 Install_update(){
 	apt-get update	
