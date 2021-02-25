@@ -85,7 +85,8 @@ Install_update(){
 	apt-get update	
 }
 #18 Netflix解锁检测
-netflix(){bash <(curl -sSL "https://github.com/veip007/Netflix_Unlock_Information/raw/main/netflix.sh")	
+netflix(){
+bash <(curl -sSL "https://github.com/veip007/Netflix_Unlock_Information/raw/main/netflix.sh")	
 }
 action=$1
 if [[ "${action}" == "monitor" ]]; then
