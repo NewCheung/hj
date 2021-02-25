@@ -3,7 +3,7 @@ PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
 
 
-sh_ver="2.0.2"
+sh_ver="2.0.3"
 
 
 
@@ -84,6 +84,9 @@ Install_wget(){
 Install_update(){
 	apt-get update	
 }
+#18 Netflix解锁检测
+netflix(){bash <(curl -sSL "https://github.com/veip007/Netflix_Unlock_Information/raw/main/netflix.sh")	
+}
 action=$1
 if [[ "${action}" == "monitor" ]]; then
 	crontab_monitor_goflyway
@@ -120,11 +123,12 @@ echo && echo -e "
  ${Green_font_prefix}16.${Font_color_suffix} wget安装(debian)  
  ${Green_font_prefix}17.${Font_color_suffix} 更新系统源 (debian)
  ——————————————————
+ ${Green_font_prefix}18.${Font_color_suffix} Netflix解锁检测
   " && echo
 
 fi
 echo
-read -e -p " 请输入数字 [0-17]:" num
+read -e -p " 请输入数字 [0-18]:" num
 case "$num" in
 	0)
 	Update_Shell
@@ -179,8 +183,10 @@ case "$num" in
 	;;
 	17)
 	Install_update
+	18)
+	netflix	
 	;;
 	*)
-	echo "请输入正确数字 [0-17]"
+	echo "请输入正确数字 [0-18]"
 	;;
 esac
