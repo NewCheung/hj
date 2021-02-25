@@ -184,6 +184,7 @@ case "$num" in
 	;;
 	17)
 	Install_update
+	;;
 	18)
 	netflix	
 	;;
