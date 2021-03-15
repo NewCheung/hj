@@ -3,7 +3,7 @@ PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
 
 
-sh_ver="2.0.3"
+sh_ver="2.0.4"
 
 
 
@@ -17,52 +17,52 @@ Update_Shell(){
 }
  #1安装BBR 锐速
 bbr_ruisu(){
-	wget -N --no-check-certificate https://raw.githubusercontent.com/veip007/Linux-NetSpeed/master/tcp.sh && chmod +x tcp.sh && bash tcp.sh
+	bash <(curl -s -L https://raw.githubusercontent.com/veip007/Linux-NetSpeed/master/tcp.sh)
 }
 #2谷歌 BBR2 BBRV2
 Google_bbr2(){
-	wget -N --no-check-certificate https://raw.githubusercontent.com/yeyingorg/bbr2.sh/master/bbr2.sh && chmod +x bbr2.sh && bash bbr2.sh
+	bash <(curl -s -L https://raw.githubusercontent.com/yeyingorg/bbr2.sh/master/bbr2.sh)
 }
 #3安装KCPtun
 Kcptun(){
-	wget -N --no-check-certificate https://github.com/veip007/Kcptun/raw/master/kcptun/kcptun.sh && chmod +x kcptun.sh && bash kcptun.sh
+	bash <(curl -s -L https://github.com/veip007/Kcptun/raw/master/kcptun/kcptun.sh)
 }
 #4安装SSR多用户版
 Install_ssr(){
-	wget -N --no-check-certificate https://raw.githubusercontent.com/veip007/doubi/master/ssrmu.sh && chmod +x ssrmu.sh && bash ssrmu.sh
+	bash <(curl -s -L https://raw.githubusercontent.com/veip007/doubi/master/ssrmu.sh)
 }
 #5安装V2ary_233一键
 Install_V2ray(){
-	wget -N --no-check-certificate https://raw.githubusercontent.com/veip007/v2ray/master/v2.sh && chmod +x v2.sh && bash v2.sh
+	bash <(curl -s -L https://raw.githubusercontent.com/veip007/v2ray/master/v2.sh)
 }
 #6安装Tg专用代理
 Tg_socks(){
-	wget -N --no-check-certificate https://raw.githubusercontent.com/veip007/doubi/master/mtproxy_go.sh && chmod +x mtproxy_go.sh && bash mtproxy_go.sh
+	bash <(curl -s -L https://raw.githubusercontent.com/veip007/doubi/master/mtproxy_go.sh)
 }
 #7安装Goflyway
 Install_goflyway(){
-	wget -N --no-check-certificate https://git.io/goflyway.sh && chmod +x goflyway.sh && bash goflyway.sh
+	bash <(curl -s -L https://git.io/goflyway.sh && chmod +x goflyway.sh)
 }
 #8小鸡性能测试
 View_superbench(){
-	wget -N --no-check-certificate https://raw.githubusercontent.com/veip007/cesu/master/superbench.sh && chmod +x superbench.sh && bash superbench.sh
+	bash <(curl -s -L https://raw.githubusercontent.com/veip007/cesu/master/superbench.sh)
 }
 
 #9回程线路测试
 View_huicheng(){
-	wget -N --no-check-certificate https://raw.githubusercontent.com/veip007/huicheng/master/huicheng && chmod +x huicheng
+	bash <(curl -s -L https://raw.githubusercontent.com/veip007/huicheng/master/huicheng)
 }
 #10安装云监控
 Install_status(){
-	wget -N --no-check-certificate https://raw.githubusercontent.com/veip007/doubi/master/status.sh && chmod +x status.sh && bash status.sh
+	bash <(curl -s -L https://raw.githubusercontent.com/veip007/doubi/master/status.sh)
 }
 #11一键DD包（OD源）
 DD_OD(){
-	wget -N --no-check-certificate https://raw.githubusercontent.com/veip007/dd/master/dd-od.sh && chmod +x dd-od.sh  && ./dd-od.sh
+	bash <(curl -s -L https://raw.githubusercontent.com/veip007/dd/master/dd-od.sh)
 }
 #12一键DD包（GD源）
 DD_GD(){
-	wget -N --no-check-certificate https://raw.githubusercontent.com/veip007/dd/master/dd-gd.sh && chmod +x dd-gd.sh  && ./dd-gd.sh
+	bash <(curl -s -L https://raw.githubusercontent.com/veip007/dd/master/dd-gd.sh)
 }
 #13Curl安装(debian)
 Install_curl(){
@@ -87,6 +87,10 @@ Install_update(){
 #18 Netflix解锁检测
 netflix(){
 bash <(curl -sSL "https://github.com/veip007/Netflix_Unlock_Information/raw/main/netflix.sh")	
+}
+#19 xray
+xray(){
+bash <(curl -sSL "https://raw.githubusercontent.com/veip007/scripts/master/xray.sh")	
 }
 action=$1
 if [[ "${action}" == "monitor" ]]; then
@@ -125,11 +129,12 @@ echo && echo -e "
  ${Green_font_prefix}17.${Font_color_suffix} 更新系统源 (debian)
  ——————————————————
  ${Green_font_prefix}18.${Font_color_suffix} Netflix解锁检测
+ ${Green_font_prefix}19.${Font_color_suffix} xray安装 
   " && echo
 
 fi
 echo
-read -e -p " 请输入数字 [0-18]:" num
+read -e -p " 请输入数字 [0-19]:" num
 case "$num" in
 	0)
 	Update_Shell
@@ -188,7 +193,10 @@ case "$num" in
 	18)
 	netflix	
 	;;
+	19)
+	xray	
+	;;
 	*)
-	echo "请输入正确数字 [0-18]"
+	echo "请输入正确数字 [0-19]"
 	;;
 esac
