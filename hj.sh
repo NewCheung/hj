@@ -3,7 +3,7 @@ PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
 
 
-sh_ver="2.0.4"
+sh_ver="2.0.5"
 
 
 
@@ -84,11 +84,15 @@ Install_wget(){
 Install_update(){
 	apt-get update	
 }
-#18 Netflix解锁检测
+#18改ls颜色(debian)
+ls --color(){
+	ls --color	
+}
+#19 Netflix解锁检测
 netflix(){
 bash <(curl -sSL "https://github.com/veip007/Netflix_Unlock_Information/raw/main/netflix.sh")	
 }
-#19 xray
+#20 xray
 xray(){
 bash <(curl -sSL "https://raw.githubusercontent.com/veip007/scripts/master/xray.sh")	
 }
@@ -127,9 +131,10 @@ echo && echo -e "
  ${Green_font_prefix}15.${Font_color_suffix} 更改root密码  
  ${Green_font_prefix}16.${Font_color_suffix} wget安装(debian)  
  ${Green_font_prefix}17.${Font_color_suffix} 更新系统源 (debian)
+ ${Green_font_prefix}18.${Font_color_suffix} 改ls颜色(debian)
  ——————————————————
- ${Green_font_prefix}18.${Font_color_suffix} Netflix解锁检测
- ${Green_font_prefix}19.${Font_color_suffix} xray安装 
+ ${Green_font_prefix}19.${Font_color_suffix} Netflix解锁检测
+ ${Green_font_prefix}20.${Font_color_suffix} xray安装 
   " && echo
 
 fi
@@ -191,9 +196,12 @@ case "$num" in
 	Install_update
 	;;
 	18)
-	netflix	
+	ls --color
 	;;
 	19)
+	netflix	
+	;;
+	20)
 	xray	
 	;;
 	*)
