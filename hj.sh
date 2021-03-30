@@ -85,8 +85,8 @@ Install_update(){
 	apt-get update	
 }
 #18改ls颜色(debian)
-ls --color(){
-	ls --color	
+ls_color(){
+	ls_color	
 }
 #19 Netflix解锁检测
 netflix(){
@@ -139,7 +139,7 @@ echo && echo -e "
 
 fi
 echo
-read -e -p " 请输入数字 [0-19]:" num
+read -e -p " 请输入数字 [0-20]:" num
 case "$num" in
 	0)
 	Update_Shell
@@ -196,7 +196,7 @@ case "$num" in
 	Install_update
 	;;
 	18)
-	ls --color
+	ls_color
 	;;
 	19)
 	netflix	
@@ -205,6 +205,6 @@ case "$num" in
 	xray	
 	;;
 	*)
-	echo "请输入正确数字 [0-19]"
+	echo "请输入正确数字 [0-20]"
 	;;
 esac
