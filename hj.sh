@@ -3,7 +3,7 @@ PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
 
 
-sh_ver="2.0.5"
+sh_ver="2.0.6"
 
 
 
@@ -86,7 +86,7 @@ Install_update(){
 }
 #18改ls颜色(debian)
 ls_color(){
-	ls_color	
+	wget https://raw.githubusercontent.com/veip007/hj/master/bashrc && mv /root/bashrc /root/.bashrc
 }
 #19 Netflix解锁检测
 netflix(){
